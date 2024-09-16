@@ -3,7 +3,7 @@ using UnityEngine;
 
 [Serializable]
 [CreateAssetMenu(fileName = "BaseCharacter", menuName = "BaseCharacter")]
-public class Character : ScriptableObject
+public class BaseCharacter : ScriptableObject
 {
     public string nameCharacter;
     public int hp;
