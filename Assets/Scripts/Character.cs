@@ -7,6 +7,7 @@ public class Character : MonoBehaviour, IDamageable<int>, IKillable
     private int _hp;
     private int _mana;
     private int _currentHP;
+    private int _currentMana;
 
     public void Start()
     {
@@ -16,7 +17,9 @@ public class Character : MonoBehaviour, IDamageable<int>, IKillable
             _hp = _baseCharacter.hp;
             _mana = _baseCharacter.mana;
             _currentHP = _hp;
+            _currentMana = _mana;
         }
+        else return;
     }
 
     public void TakeDamage(int takenDamage)
