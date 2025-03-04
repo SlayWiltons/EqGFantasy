@@ -6,13 +6,14 @@ using UnityEngine;
 public class BattleSystem : MonoBehaviour
 {
     private State_Base currentState;
+    private int round = 0;
     [SerializeField] private List<BaseCharacter> heroes;
     [SerializeField] private List<BaseCharacter> enemies;
     public State_StartRound StartRound = new State_StartRound();
-    public List<BaseCharacter> HeroesList = new List<BaseCharacter>();
-    public List<BaseCharacter> EnemiesList = new List<BaseCharacter>();
-    public List<BaseCharacter> ActiveHeroes = new List<BaseCharacter>();
-    public List<BaseCharacter> ActiveEnemies = new List<BaseCharacter>();
+    private List<BaseCharacter> HeroesList = new List<BaseCharacter>();
+    private List<BaseCharacter> EnemiesList = new List<BaseCharacter>();
+    private List<BaseCharacter> ActiveHeroes = new List<BaseCharacter>();
+    private List<BaseCharacter> ActiveEnemies = new List<BaseCharacter>();
 
     private void Awake()
     {
@@ -27,13 +28,14 @@ public class BattleSystem : MonoBehaviour
     }
 
     private void Start()
-    {
+    {        
         currentState = StartRound;
         currentState.OnStateEnter(this);
     }
 
-    public void GetNumber()
+    public void NewRound()
     {
-        Debug.Log("1");
+        round++;
+        Debug.Log("Round " + round);
     }
 }

@@ -151,6 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb8addb62347b945866aef4a3521395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heroes:
+  - {fileID: 11400000, guid: 52d8c0a8e3cae0f438c83a62645419f3, type: 2}
+  - {fileID: 11400000, guid: 282541e52fd308441b84c9fb7ad84a64, type: 2}
+  enemies:
+  - {fileID: 11400000, guid: 0f70fd72fdbe036429466d50611cb139, type: 2}
+  - {fileID: 11400000, guid: 0f70fd72fdbe036429466d50611cb139, type: 2}
+  - {fileID: 11400000, guid: a4562df87d1dbb44383c8c62877ed7a0, type: 2}
+  - {fileID: 11400000, guid: a4562df87d1dbb44383c8c62877ed7a0, type: 2}
 --- !u!4 &1902837593
 Transform:
   m_ObjectHideFlags: 0
