@@ -1,29 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
 using UnityEngine;
 
 public class BattleSystem : MonoBehaviour
 {
     private State_Base currentState;
+    private Character hero;
+    private Character enemy;
     private int round = 0;
     [SerializeField] private List<BaseCharacter> heroes;
     [SerializeField] private List<BaseCharacter> enemies;
     public State_StartRound StartRound = new State_StartRound();
-    private List<BaseCharacter> HeroesList = new List<BaseCharacter>();
-    private List<BaseCharacter> EnemiesList = new List<BaseCharacter>();
-    private List<BaseCharacter> ActiveHeroes = new List<BaseCharacter>();
-    private List<BaseCharacter> ActiveEnemies = new List<BaseCharacter>();
+    private List<Character> HeroesList = new List<Character>();
+    private List<Character> EnemiesList = new List<Character>();
+    private List<Character> ActiveHeroes = new List<Character>();
+    private List<Character> ActiveEnemies = new List<Character>();
 
     private void Awake()
     {
+        Debug.Log(hero);
         for (int i = 0; i < heroes.Count; i++)
-        {
-            HeroesList.Add(heroes[i]);
+        {            
+            hero.InitializeCharacter(heroes[i]);//пока не работает
+            HeroesList.Add(hero);
         }
         for (int i = 0; i < enemies.Count; i++)
-        {
-            EnemiesList.Add(heroes[i]);
+        {            
+            enemy.InitializeCharacter(enemies[i]);
+            EnemiesList.Add(enemy);
         }
     }
 
@@ -37,5 +41,13 @@ public class BattleSystem : MonoBehaviour
     {
         round++;
         Debug.Log("Round " + round);
+    }
+
+    public void ShowLists()
+    {
+        for (int i = 0; i < HeroesList.Count; i++)
+        {
+            Debug.Log(HeroesList[i]);
+        }
     }
 }
